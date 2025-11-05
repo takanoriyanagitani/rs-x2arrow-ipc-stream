@@ -1,0 +1,34 @@
+[package]
+name = "rs-x2arrow-ipc-stream"
+version = "0.1.0"
+edition = "2024"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+
+[[bin]]
+name = "x2arrow-ipc-stream"
+
+[dependencies.clap]
+version = "4"
+features = ["derive"]
+
+[dependencies.arrow]
+version = "57"
+default-features = false
+features = [
+	"ipc",
+]
+
+[dependencies.calamine]
+version = "0"
+default-features = true
+features = ["chrono"]
+
+[dependencies.chrono]
+version = "0.4"
+features = ["serde"]
